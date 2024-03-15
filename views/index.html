@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div id="form">
+    <h1>Welcome, User!</h1>
+    <form id="signup">
+        <input type="text" id="username" placeholder="Username"><br>
+        <input type="text" id="firstname" placeholder="Firstname"><br>
+        <textarea name="comment-box" id="comment-box" cols="30" rows="10" placeholder="Leave a Comment!"></textarea><br>
+        <button id="submit">Submit</button>
+    </form>
+    </div>
+   </div>
+   <div id="posts">
+    
+    <H1>Comments</H1>
+
+    <ul>
+   <li> <div class="comment">
+        <h3>Jake</h3><em>@jakesocool123</em>
+        <p>This is a test comment</p> 
+    </div>
+   </li>
+   </ul>
+   </div>
+   <script>
+      const btn = document.getElementByid('submit')
+      const username = document.getElementById('username')
+      const firstname = document.getElementById('firstname')
+      const postbox = document.querySelector('ul')
+      const textarea = document.querySelector('textarea')
+
+
+
+      function postComment() {
+
+        const newComment = document.createElement('li');
+        
+
+        const comment = 
+        ` <div class='comment'>
+        <h3>${firstname.value}</h3><em>${username.value}</em>
+        <p>${textarea.value}</p>
+        </div>`
+    
+       
+        newComment.innerHTML = comment
+        postbox.innerHTML =  newComment
+        postbox.appendChild(newComment)
+      }
+postComment()
+    btn.addEventListener('click', postComment())
+   </script>
+</body>
+</html>
