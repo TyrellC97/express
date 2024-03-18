@@ -24,6 +24,8 @@ app.get('/users/:id', (req, res) => {
 })
 
 app.post('/users', (req, res) => {
+  const newInfo = req.body;
+  userRoutes.push(newInfo)
   res.send(`Post request successful!`)
 })
 
